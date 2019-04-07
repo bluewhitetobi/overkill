@@ -12,8 +12,8 @@ services:
       - MONGO_URL=mongodb://mongo:27017/rocketchat
       - MONGO_OPLOG_URL=mongodb://mongo:27017/local
       - MAIL_URL=smtp://smtp.email
-      - HTTP_PROXY=http://chat.homeitportal.de
-      - HTTPS_PROXY=http://chat.homeitportal.de
+      - HTTP_PROXY=http://chat.meinedomain.de
+      - HTTPS_PROXY=http://chat.meinedomain.de
     depends_on:
       - mongo
     ports:
@@ -25,7 +25,7 @@ services:
       - "traefik.backend=rocketchat"
       - traefik.frontend.entryPoints=http,https
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:chat.homeitportal.de"
+      - "traefik.frontend.rule=Host:chat.meinedomain.de"
       - "traefik.port=3000"
       - "traefik.docker.network=traefik_proxy"
 
@@ -97,7 +97,7 @@ services:
       - "traefik.backend=sinusbot"
       - traefik.frontend.entryPoints=http,https
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:sinusbot.homeitportal.de"
+      - "traefik.frontend.rule=Host:sinusbot.meinedomain.de"
       - "traefik.port=8087"
       - "traefik.docker.network=traefik_proxy"
 #    networks:
