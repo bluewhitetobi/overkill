@@ -2,11 +2,11 @@
 
 ############################################################################################################
 
-# Firewall install und aktivieren
+# UFW Firewall install und aktivieren
 
-UFW Firewall install
    	sudo apt update  -y & apt-get install ufw
    	sudo ufw enable
+		
 		ufw allow 22
 		ufw allow 80
 		ufw allow 443
