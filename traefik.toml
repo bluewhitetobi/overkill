@@ -18,12 +18,12 @@ debug = false
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"
-domain = "homeitportal.de"
+domain = "meinedomain.de"
 watch = true
 exposedByDefault = false
 
 [acme]
-email = "admin@famkub.de"
+email = "meinemail@gmx.de"
 storage = "/media/docker/traefik/acme.json"
 entryPoint = "https"
 acmeLogging=true
