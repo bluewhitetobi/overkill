@@ -20,7 +20,7 @@ services:
       - 3000:3000
 #    labels:
 #      - "traefik.backend=rocketchat"
-#      - "traefik.frontend.rule=Host: chat.homeitportal.de"
+#      - "traefik.frontend.rule=Host: chat.meinedomain.de"
     labels:
       - "traefik.backend=rocketchat"
       - traefik.frontend.entryPoints=http,https
