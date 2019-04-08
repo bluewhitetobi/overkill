@@ -1,32 +1,32 @@
-logLevel = "INFO"
-  defaultEntryPoints = ["http", "https"]
-
-debug = false
-
-[web]
-  address = ":8080"
-
+defaultEntryPoints = ["http", "https"]
+[acme]
+email = "meine@example.com"
+entryPoint = "https"
+onDemand = false
+OnHostRule = true
+[acme.httpChallenge]
+entryPoint = "http"
 [entryPoints]
   [entryPoints.http]
   address = ":80"
     [entryPoints.http.redirect]
-    entryPoint = "https"
+      entryPoint = "https"
   [entryPoints.https]
   address = ":443"
-  [entryPoints.https.tls]
-
-
+    [entryPoints.https.tls]
+[web]
+address = ":8080"
+[web.statistics]
+  RecentErrors = 10
+  [web.auth.basic]
+    users = ["username:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"]
 [docker]
 endpoint = "unix:///var/run/docker.sock"
 domain = "meinedomain.de"
 watch = true
-exposedByDefault = false
+exposedbydefault = false
+ [frontends]
+   [frontends.docservice]
+   backend = "docservice"
+   passHostHeader = true
 
-[acme]
-email = "meinemail@gmx.de"
-storage = "/media/docker/traefik/acme.json"
-entryPoint = "https"
-acmeLogging=true
-onHostRule = true
-[acme.httpChallenge]
-entryPoint = "http"
